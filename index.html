@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>কাদিরখিল উচ্চ বিদ্যালয়</title>
+  <meta name="description" content="কাদিরখিল উচ্চ বিদ্যালয় প্রাক্তন শিক্ষার্থী সংঘের ওয়েবসাইট — ইতিহাস, প্রাক্তন শিক্ষার্থী ডিরেক্টরি, ব্লগ ও bKash দান।" />
+  <meta name="theme-color" content="#0a4d8c" />
+  <meta property="og:title" content="কাদিরখিল উচ্চ বিদ্যালয়" />
+  <meta property="og:description" content="এক শতাব্দীর শিক্ষা, আজীবনের বন্ধুত্ব — প্রাক্তন শিক্ষার্থী সংঘের আনুষ্ঠানিক ওয়েবসাইট।" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="home-page">
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">KHS</div>
+      <div class="brand-text">
+        <h1>কাদিরখিল উচ্চ বিদ্যালয়</h1>
+        <p>জ্ঞান &middot; চরিত্র &middot; সেবা</p>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="প্রধান মেনু">
+      <a href="index.html" class="active" aria-current="page">হোম</a>
+      <a href="history.html">ইতিহাস</a>
+      <a href="alumni.html">প্রাক্তন শিক্ষার্থী</a>
+      <a href="blog.html">ব্লগ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-inner">
+        <h2 id="hero-heading">এক শতাব্দীর শিক্ষা, আজীবনের বন্ধুত্ব।</h2>
+        <p>কাদিরখিল উচ্চ বিদ্যালয়ের প্রাক্তন শিক্ষার্থীদের আবাস &mdash; নিবন্ধন করুন, পুনরায় যুক্ত হোন এবং পরবর্তী প্রজন্মকে সমর্থন করুন।</p>
+        <div class="cta-row">
+          <a class="btn primary" href="alumni.html">প্রাক্তন শিক্ষার্থী হিসেবে নিবন্ধন করুন</a>
+          <a class="btn primary alt" href="#" data-open-register>
+            <span class="donate-icon" aria-hidden="true">♥</span> bKash-এর মাধ্যমে দান করুন
+          </a>
+          <a class="btn ghost" href="history.html">আমাদের ইতিহাস পড়ুন</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards" aria-label="প্রধান সেবাসমূহ">
+      <article class="card">
+        <h3>আমাদের ইতিহাস</h3>
+        <p>একটি ছোট গ্রামের স্কুলঘর থেকে কমিউনিটির লাগানো পর্যন্ত &mdash; আমাদের গড়ে ওঠা মাইলফলকগুলো দেখুন।</p>
+        <a href="history.html">সময়রেখা দেখুন &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>প্রাক্তন শিক্ষার্থী নেটওয়ার্ক</h3>
+        <p>আপনি কি ইতিমধ্যে পাশ করেছেন? প্রাক্তন শিক্ষার্থী ডিরেক্টরিতে নিজের নাম যোগ করুন, যাতে সহপাঠী ও বর্তমান শিক্ষার্থীরা আপনাকে খুঁজে পান।</p>
+        <a href="alumni.html">ডিরেক্টরিতে যান &rarr;</a>
+      </article>
+      <article class="card">
+        <h3>প্রাক্তন শিক্ষার্থী ব্লগ</h3>
+        <p>আপনার যাত্রার কথা লিখুন, স্মৃতি ভাগ করে নিন, বর্তমান শিক্ষার্থীদের পরামর্শ দিন।</p>
+        <a href="blog.html">ব্লগ খুলুন &rarr;</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> কাদিরখিল উচ্চ বিদ্যালয় প্রাক্তন শিক্ষার্থী সংঘ</p>
+    <p class="muted">প্রাক্তন শিক্ষার্থীদের দ্বারা তৈরি, প্রাক্তন শিক্ষার্থীদের জন্য।</p>
+  </footer>
+
+  <!-- ============= Registration / Donation modal ============= -->
+  <div id="register-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-sub" aria-hidden="true">
+    <div class="modal-card" role="document">
+      <button type="button" class="modal-close" data-close-modal aria-label="বন্ধ করুন">&times;</button>
+
+      <h2 id="modal-title" class="modal-title">KHS-এ যোগ দিন বা সহায়তা করুন</h2>
+      <p class="modal-sub" id="modal-sub">আপনার স্কুলের সঙ্গে যুক্ত হওয়ার দুটি উপায়। শুরু করতে একটি বেছে নিন।</p>
+
+      <div class="tabs" role="tablist" aria-label="নিবন্ধনের অপশন">
+        <button id="tab-directory" class="tab active" role="tab" aria-selected="true" aria-controls="panel-directory">
+          প্রাক্তন শিক্ষার্থী ডিরেক্টরি
+        </button>
+        <button id="tab-full" class="tab" role="tab" aria-selected="false" aria-controls="panel-full">
+          সম্পূর্ণ নিবন্ধন ও দান
+        </button>
+      </div>
+
+      <!-- Panel 1: directory -->
+      <section id="panel-directory" class="panel" role="tabpanel" aria-labelledby="tab-directory">
+        <p class="muted">
+          দ্রুত নিবন্ধন &mdash; আপনার নামটি প্রকাশ্য প্রাক্তন শিক্ষার্থী ডিরেক্টরিতে যুক্ত হবে।
+          Supabase-এ সংরক্ষিত (স্থানীয় বিকল্পসহ) এবং
+          <a href="alumni.html">প্রাক্তন শিক্ষার্থী পাতায়</a> দেখা যাবে।
+        </p>
+        <a class="btn primary big" href="alumni.html#alumni-form">ডিরেক্টরির ফর্ম খুলুন</a>
+        <ul class="bullets">
+          <li>শুধু নাম ও পাশের সন দেওয়া আবশ্যক।</li>
+          <li>ঐচ্ছিক: ইমেইল, পেশা, ঠিকানা, সংক্ষিপ্ত স্মৃতি।</li>
+          <li>জমা দেওয়ার সঙ্গে সঙ্গে সংখ্যা আপডেট হয়।</li>
+        </ul>
+      </section>
+
+      <!-- Panel 2: full registration + donation -->
+      <section id="panel-full" class="panel" role="tabpanel" aria-labelledby="tab-full" hidden>
+        <div class="donate-meta" role="group" aria-label="দানের সারসংক্ষেপ">
+          <div>
+            <div class="muted">অর্থসংগ্রহের লক্ষ্য</div>
+            <div class="donate-goal" id="goal-amount" aria-live="polite" aria-label="অর্থসংগ্রহের লক্ষ্য">&mdash;</div>
+          </div>
+          <div>
+            <div class="muted">পেমেন্ট পদ্ধতি</div>
+            <div class="donate-method">
+              <strong>bKash</strong> &mdash; নিচে দেওয়া ব্যক্তিগত নম্বরে পাঠান এবং ফর্মে TrxID বসান।
+            </div>
+          </div>
+        </div>
+
+        <ol class="donate-steps" aria-label="দান করার ধাপ">
+          <li>আপনার দানটি <strong>01XXXXXXXXX</strong> নম্বরে পাঠান (bKash ব্যক্তিগত)।</li>
+          <li>কনফার্মেশন SMS থেকে ৮–২০ অক্ষরের <strong>TrxID</strong> কপি করুন।</li>
+          <li>পাশের ফর্মে তথ্য পূরণ করে জমা দিন।</li>
+        </ol>
+
+        <p class="muted">TrxID যাচাইকারী (একটি ভুয়া ট্রাই করুন):</p>
+        <label class="trx-label" for="bkash-trx">
+          bKash TrxID (টেস্ট):
+          <input id="bkash-trx" type="text" placeholder="যেমন: 9TR9W3XQ7C" maxlength="20" aria-describedby="bkash-echo" />
+        </label>
+        <div id="bkash-echo" class="trx-echo" aria-live="polite"></div>
+
+        <div id="form-live-preview" class="form-live" role="region" aria-label="নিবন্ধন ও দানের ফর্ম প্রিভিউ"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="supabase.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

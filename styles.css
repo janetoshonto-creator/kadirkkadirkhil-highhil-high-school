@@ -1,0 +1,467 @@
+/* ====== Kadirkhil High School ====== */
+:root {
+  --primary: #0a4d8c;
+  --primary-dark: #073d70;
+  --accent: #d4a017;
+  --bg: #f7f8fb;
+  --surface: #ffffff;
+  --text: #1c2536;
+  --muted: #6b7385;
+  --border: #e3e6ee;
+  --shadow: 0 4px 18px rgba(10, 77, 140, 0.08);
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+/* Form controls and buttons do not inherit the page font by default. */
+button, input, select, textarea { font-family: inherit; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Hind Siliguri", "Noto Sans Bengali", "Nirmala UI", "Vrinda", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Visible keyboard focus for every interactive element. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--primary-dark);
+  margin-top: 0;
+  font-family: "Noto Serif Bengali", "Hind Siliguri", "Noto Sans Bengali", serif;
+}
+
+/* ====== Header ====== */
+.site-header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: var(--shadow);
+}
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo {
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--primary-dark);
+  font-weight: 800;
+  display: grid; place-items: center;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.brand-text h1 { margin: 0; color: #fff; font-size: 1.25rem; }
+.brand-text p { margin: 0; font-size: 0.85rem; opacity: 0.85; }
+
+.site-nav { display: flex; gap: 6px; flex-wrap: wrap; }
+.site-nav a {
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.15s ease;
+}
+.site-nav a:hover { background: rgba(255,255,255,0.12); text-decoration: none; }
+.site-nav a.active { background: var(--accent); color: var(--primary-dark); }
+
+/* ====== Hero ====== */
+.hero {
+  background: linear-gradient(rgba(10,77,140,0.85), rgba(7,61,112,0.92)),
+              radial-gradient(circle at 30% 30%, #1b6db5 0%, transparent 60%),
+              var(--primary);
+  color: #fff;
+  padding: 64px 24px;
+}
+.hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+.hero h2 { color: #fff; font-size: 2.2rem; margin-bottom: 12px; }
+.hero p { font-size: 1.1rem; opacity: 0.92; margin: 0 auto 24px; max-width: 620px; }
+.cta-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ====== Buttons ====== */
+.btn {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.05s ease, background 0.15s ease;
+}
+.btn:hover { text-decoration: none; }
+.btn:active { transform: translateY(1px); }
+.btn.primary { background: var(--accent); color: var(--primary-dark); }
+.btn.primary:hover { background: #e6b234; }
+.btn.ghost {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+}
+.btn.ghost:hover { background: rgba(255,255,255,0.22); }
+.alumni-page .btn.ghost,
+.history-page .btn.ghost,
+.blog-page .btn.ghost,
+.container .btn.ghost {
+  background: var(--surface);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+.container .btn.ghost:hover { background: #eef3fa; }
+.btn.small { padding: 7px 14px; font-size: 0.85rem; }
+
+/* ====== Layout ====== */
+main.container {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
+}
+.page-header { margin-bottom: 24px; }
+.page-header h2 { font-size: 1.9rem; }
+.page-header p { color: var(--muted); max-width: 720px; }
+
+.cards {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.card h3 { margin-bottom: 8px; }
+.card p { color: var(--muted); }
+
+/* ====== Forms ====== */
+.form label {
+  display: block;
+  margin-bottom: 14px;
+  font-weight: 500;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.form input, .form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  background: #fafbfd;
+}
+.form input:focus, .form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(10,77,140,0.12);
+}
+.form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 600px) { .form .row { grid-template-columns: 1fr; } }
+.form-actions { display: flex; gap: 10px; margin-top: 8px; }
+.status { margin: 10px 0 0; font-size: 0.9rem; min-height: 1.2em; }
+.status.ok { color: #1a7a3b; }
+.status.err { color: #b32d2d; }
+
+/* ====== Timeline ====== */
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-left: 3px solid var(--accent);
+}
+.timeline li {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 16px 0 16px 18px;
+  position: relative;
+}
+.timeline li::before {
+  content: "";
+  width: 12px; height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: -7.5px; top: 22px;
+  box-shadow: 0 0 0 3px var(--bg);
+}
+.t-year {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.05rem;
+}
+.t-body h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.t-body p { margin: 0; color: var(--muted); }
+@media (max-width: 600px) {
+  .timeline li { grid-template-columns: 1fr; gap: 4px; }
+}
+
+/* ====== Alumni list ====== */
+.alumni-list-section, .posts-section { margin-top: 36px; }
+.list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.list-header h3 { margin: 0; }
+.count {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--primary-dark);
+  padding: 2px 9px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.list-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.list-actions input {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  background: #fff;
+  min-width: 220px;
+}
+
+.alumni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+.alumni-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.alumni-card .name { font-weight: 700; color: var(--primary-dark); }
+.alumni-card .meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex; flex-wrap: wrap; gap: 4px 12px;
+}
+.alumni-card .msg { font-size: 0.92rem; margin-top: 4px; }
+.alumni-card .delete {
+  align-self: flex-start;
+  background: transparent;
+  border: none;
+  color: #b32d2d;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 4px;
+}
+.alumni-card .delete:hover { text-decoration: underline; }
+
+/* ====== Posts ====== */
+.posts-list { display: flex; flex-direction: column; gap: 14px; }
+.post {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow);
+}
+.post h4 { margin: 0 0 4px; color: var(--primary-dark); }
+.post .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 10px; }
+.post .body { white-space: pre-wrap; }
+.post .delete {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: #b32d2d;
+  font-size: 0.82rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.post .delete:hover { background: #fbeaea; }
+
+/* ====== Misc ====== */
+.muted { color: var(--muted); }
+.empty { text-align: center; padding: 18px; }
+
+.site-footer {
+  background: var(--primary-dark);
+  color: #cdd5e0;
+  text-align: center;
+  padding: 22px 16px;
+  margin-top: 48px;
+}
+.site-footer .muted { color: #9aa6b6; font-size: 0.85rem; }
+.site-footer p { margin: 4px 0; }
+
+/* ====== Hero — register CTA group ====== */
+.hero .btn.primary { background: var(--accent); color: var(--primary-dark); }
+.hero .btn.primary.alt {
+  background: #e21c7a;          /* bKash-ish magenta */
+  color: #fff;
+  border: 1px solid #c8156a;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.hero .btn.primary.alt:hover { background: #c8156a; }
+.donate-icon { font-size: 1.05rem; line-height: 1; }
+
+/* ====== Page actions ====== */
+.page-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+.btn.small { padding: 7px 14px; font-size: 0.85rem; }
+
+/* ====== Modal ====== */
+.modal {
+  position: fixed; inset: 0;
+  background: rgba(7, 61, 112, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+.modal.open { display: flex; }
+.modal-card {
+  background: var(--surface);
+  width: min(720px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 28px 32px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  position: relative;
+}
+.modal-close {
+  position: absolute; top: 10px; right: 12px;
+  background: transparent; border: none;
+  font-size: 1.6rem; line-height: 1; cursor: pointer;
+  color: var(--muted);
+}
+.modal-close:hover { color: var(--primary-dark); }
+.modal-title { margin: 0 0 6px; }
+.modal-sub { margin: 0 0 18px; color: var(--muted); }
+
+.tabs {
+  display: inline-flex;
+  background: #eef3fa;
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 18px;
+  gap: 4px;
+}
+.tab {
+  border: none; background: transparent;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.tab.active {
+  background: var(--primary);
+  color: #fff;
+}
+.tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.panel { display: block; }
+.panel[hidden] { display: none; }
+.panel .btn.big { padding: 12px 24px; font-size: 1rem; display: inline-block; margin-top: 6px; }
+
+.bullets { color: var(--muted); padding-left: 1.1rem; margin: 12px 0 0; }
+.bullets li { margin: 4px 0; }
+
+.donate-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: #f5f8fc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+@media (max-width: 600px) {
+  .donate-meta { grid-template-columns: 1fr; }
+}
+.donate-goal { font-size: 1.4rem; font-weight: 700; color: var(--primary-dark); }
+.donate-method { font-size: 0.95rem; }
+
+.donate-steps {
+  padding-left: 1.1rem;
+  margin: 0 0 12px;
+}
+.donate-steps li { margin: 4px 0; }
+
+.trx-label {
+  display: block;
+  font-weight: 500;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+}
+.trx-label input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.95rem;
+  background: #fafbfd;
+}
+.trx-label input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(10,77,140,0.12);
+}
+.trx-echo { font-size: 0.9rem; min-height: 1.2em; margin-bottom: 12px; }
+.trx-echo.ok  { color: #1a7a3b; }
+.trx-echo.err { color: #b32d2d; }
+
+.form-live { margin-top: 12px; }
+.gform { border: 1px solid var(--border); border-radius: 10px; }
+.form-empty {
+  padding: 16px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  background: #fafbfd;
+}
+.form-fallback { margin-top: 8px; font-size: 0.85rem; }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ব্লগ &mdash; কাদিরখিল উচ্চ বিদ্যালয়</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@500;600;700&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="blog-page">
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">KHS</div>
+      <div class="brand-text">
+        <h1>কাদিরখিল উচ্চ বিদ্যালয়</h1>
+        <p>জ্ঞান &middot; চরিত্র &middot; সেবা</p>
+      </div>
+    </div>
+    <nav class="site-nav" aria-label="প্রধান মেনু">
+      <a href="index.html">হোম</a>
+      <a href="history.html">ইতিহাস</a>
+      <a href="alumni.html">প্রাক্তন শিক্ষার্থী</a>
+      <a href="blog.html" class="active" aria-current="page">ব্লগ</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <header class="page-header">
+      <h2>প্রাক্তন শিক্ষার্থী ব্লগ</h2>
+      <p>লিখুন, ভাবুন এবং ভাগ করে নিন। এই সাইটে যেকোনো দর্শক পোস্ট দেখতে পান; খসড়া সংরক্ষণ করতে চাইলে <strong>JSON রপ্তানি</strong> ব্যবহার করুন বা ফর্ম পরিষ্কার করার আগে পোস্টটি কপি করে রাখুন।</p>
+    </header>
+
+    <article class="card form">
+      <h3>একটি পোস্ট লিখুন</h3>
+      <form id="post-form" aria-label="নতুন ব্লগ পোস্ট লেখার ফর্ম">
+        <div class="row">
+          <label>লেখকের নাম *
+            <input type="text" name="author" required maxlength="60" placeholder="আপনার নাম" />
+          </label>
+          <label>শিরোনাম *
+            <input type="text" name="title" required maxlength="120" placeholder="পোস্টের শিরোনাম" />
+          </label>
+        </div>
+        <label>আপনার পোস্ট *
+          <textarea name="body" required rows="8" maxlength="5000" placeholder="একটি স্মৃতি, পরামর্শ বা গল্প ভাগ করে নিন..."></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn primary">প্রকাশ করুন</button>
+          <button type="reset" class="btn ghost">ফর্ম পরিষ্কার করুন</button>
+        </div>
+        <p id="post-status" class="status" aria-live="polite"></p>
+      </form>
+    </article>
+
+    <section class="posts-section" aria-label="সাম্প্রতিক পোস্টের তালিকা">
+      <div class="list-header">
+        <h3>সাম্প্রতিক পোস্ট <span id="posts-count" class="count" aria-live="polite">0</span></h3>
+        <div class="list-actions">
+          <input type="search" id="posts-search" placeholder="পোস্ট খুঁজুন..." aria-label="পোস্ট খুঁজুন" />
+          <button id="export-posts" class="btn small ghost" type="button">JSON রপ্তানি</button>
+        </div>
+      </div>
+      <div id="posts-list" class="posts-list">
+        <p class="muted empty">এখনো কোনো পোস্ট নেই। উপরে প্রথম হিসেবে প্রকাশ করুন।</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> কাদিরখিল উচ্চ বিদ্যালয় প্রাক্তন শিক্ষার্থী সংঘ</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
